@@ -1,0 +1,479 @@
+/* ==========================================================================
+   1. ส่วนตั้งค่าพื้นฐาน (Global Styles & Variables)
+   ========================================================================== */
+:root {
+    --primary-color: #f1c40f;   /* สีเหลืองเอกลักษณ์ของ JavaScript */
+    --dark-bg: #1e272e;         /* สีพื้นหลัง Navbar */
+    --light-bg: #f5f7fa;        /* สีพื้นหลังบอดี้ */
+    --text-color: #2c3e50;      /* สีข้อความหลัก */
+    --card-bg: #ffffff;         /* สีกล่องข้อความ */
+    --accent-color: #3498db;    /* สีฟ้าเน้นจุดสำคัญ */
+    --transition-speed: 0.4s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. แถบเนวิเกชัน (Navigation Bar) & Responsive Menu
+   ========================================================================== */
+.navbar {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-link {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #1e272e;
+    background-color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ปุ่ม Hamburger เมนูสําหรับมือถือ */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   3. พื้นที่การแสดงผลและการจัดการเปลี่ยนหน้าแบบ SPA
+   ========================================================================== */
+.content-container {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    padding: 40px 20px;
+    min-height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-section {
+    display: none; /* ซ่อนหน้าอื่นๆ ทั้งหมดไว้เริ่มต้น */
+    width: 100%;
+    max-width: 850px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+/* เมื่อหน้าใดๆ ถูกเปิดใช้งาน จะทำงานแบบ Animation เลื่อนและจางขึ้นมา */
+.page-section.active-section {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   4. หน้าดีไซน์ประกอบคอมโพเนนต์ต่างๆ (Cards, Badges, Lists)
+   ========================================================================== */
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--primary-color);
+}
+
+h2 {
+    font-size: 26px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #f1f2f6;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #57606f;
+    text-indent: 20px;
+}
+
+/* หน้าแรก Hero Section */
+.hero-content {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.js-badge {
+    background-color: var(--primary-color);
+    color: #1e272e;
+    font-size: 64px;
+    font-weight: 700;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border-radius: 15px;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 10px 20px rgba(241, 196, 15, 0.3);
+}
+
+h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #747d8c;
+    text-indent: 0;
+}
+
+.meta-info {
+    margin-top: 40px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.meta-info p {
+    text-indent: 0;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* สไตล์กล่องไฮไลท์และไทม์ไลน์ */
+.visual-box {
+    background-color: #fcf8e3;
+    border: 1px dashed var(--primary-color);
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #8a6d3b;
+    margin-top: 20px;
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.timeline-item {
+    background-color: #e4e7eb;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.timeline-item.highlight {
+    background-color: var(--primary-color);
+    color: #1e272e;
+}
+
+.arrow {
+    color: #a4b0be;
+}
+
+.feature-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.feature-list li {
+    padding: 12px 15px;
+    background: #f8f9fa;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* HTML + CSS + JS Trio Box */
+.web-trio {
+    display: table;
+    width: 100%;
+    margin-top: 25px;
+    border-collapse: separate;
+    border-spacing: 15px 0;
+}
+
+.trio-box {
+    display: table-cell;
+    width: 33.33%;
+    padding: 25px 15px;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.html-box { background-color: #e44d26; }
+.css-box { background-color: #264de4; }
+.js-box { background-color: #f1c40f; color: #1e272e; }
+
+/* Grid ระบบควบคุม */
+.grid-container {
+    display: block;
+}
+
+.grid-item {
+    background: #f1f2f6;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    border-left: 4px solid var(--accent-color);
+}
+
+/* โค้ดเดโมและตัวอย่างคำสั่ง */
+pre {
+    background-color: #2f3542;
+    color: #f1f2f6;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+code {
+    font-weight: 600;
+    color: #c0392b;
+}
+
+pre code {
+    color: #eccc68;
+    font-weight: normal;
+}
+
+.comment-box {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #747d8c;
+}
+
+.comment-box code {
+    color: #78e08f;
+}
+
+.action-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.action-btn:hover {
+    background-color: #2980b9;
+}
+
+/* หน้าขอบคุณ */
+.thank-you-card {
+    text-align: center;
+    border-left: none;
+    border-top: 6px solid var(--primary-color);
+}
+
+.badge-text {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 6px 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.badge-text.large {
+    font-size: 32px;
+    font-weight: 700;
+    padding: 15px 40px;
+    margin: 20px 0;
+}
+
+.profile-summary {
+    margin-top: 25px;
+}
+
+.prof-sub {
+    text-indent: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   5. แถบปุ่มคอนโทรลด้านล่าง (Footer Navigation)
+   ========================================================================== */
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    z-index: 999;
+}
+
+.nav-btn {
+    background-color: var(--dark-bg);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #3d4e5d;
+}
+
+.nav-btn:disabled {
+    background-color: #dcdde1;
+    color: #a6b1b9;
+    cursor: not-allowed;
+}
+
+.page-indicator {
+    font-weight: 600;
+    color: #747d8c;
+    font-size: 15px;
+}
+
+/* ==========================================================================
+   6. รองรับขนาดหน้าจอมือถือ (Responsive Design)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* แสดงปุ่มแฮมเบอร์เกอร์บนหน้าจอมือถือ */
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 56px;
+        left: -100%;
+        flex-direction: column;
+        background-color: var(--dark-bg);
+        width: 100%;
+        height: calc(100vh - 56px);
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+        padding-top: 20px;
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        left: 0; /* แสดงเมนูออกมาเมื่อกดปุ่ม */
+    }
+
+    .nav-link {
+        display: block;
+        padding: 15px;
+        border-radius: 0;
+        font-size: 16px;
+    }
+
+    .web-trio {
+        display: block;
+    }
+
+    .trio-box {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .timeline {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+    
+    .card {
+        padding: 25px 15px;
+    }
+    
+    h1 {
+        font-size: 26px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript สำหรับนักศึกษา - กิตติกา พรหมศิริ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">JS <span>Learning</span></div>
+        <button class="menu-toggle" id="menuToggle" aria-label="เปิดเมนู">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-menu" id="navMenu">
+            <a href="#" class="nav-link active" data-target="page1">หน้าแรก</a>
+            <a href="#" class="nav-link" data-target="page2">JS คืออะไร</a>
+            <a href="#" class="nav-link" data-target="page3">ประวัติ</a>
+            <a href="#" class="nav-link" data-target="page4">ความสำคัญ</a>
+            <a href="#" class="nav-link" data-target="page5">การทำงาน</a>
+            <a href="#" class="nav-link" data-target="page6">HTML+CSS+JS</a>
+            <a href="#" class="nav-link" data-target="page7">Web Browser</a>
+            <a href="#" class="nav-link" data-target="page8">โครงสร้างพื้นฐาน</a>
+            <a href="#" class="nav-link" data-target="page9">การเชื่อมไฟล์</a>
+            <a href="#" class="nav-link" data-target="page10">การเขียนคำสั่ง</a>
+            <a href="#" class="nav-link" data-target="page11">Comment</a>
+            <a href="#" class="nav-link" data-target="page12">สรุป/ขอบคุณ</a>
+        </nav>
+    </header>
+
+    <main class="content-container">
+        
+        <section id="page1" class="page-section active-section">
+            <div class="hero-content">
+                <div class="js-badge">JS</div>
+                <h1>JAVASCRIPT สำหรับนักศึกษา</h1>
+                <p class="subtitle">ความหมาย ประวัติ การทำงาน และตัวอย่างพื้นฐาน</p>
+                <div class="meta-info">
+                    <p><strong>โดย:</strong> กิตติกา พรหมศิริ</p>
+                   <p>นันทิตา เที่ยงทัศน์</p>
+                   <P>สิริภัสสรณ์ ศุนยัน</P>
+                   <p>รัชนีภรณ์ ยันตะพันธ์</p>
+                   <p>สุริภา นั่งสูงเนิน</p>
+                    <p>สาขาเทคโนโลยีสารสนเทศ</p>
+                    <p>รายวิชาการพัฒนาซอฟต์แวร์ด้วยเทคโนโลยี Front-End</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="page2" class="page-section">
+            <div class="card">
+                <h2>JavaScript คืออะไร?</h2>
+                <hr>
+                <p>JavaScript คือภาษาสคริปต์ที่ใช้เขียนโปรแกรมบนเว็บ ทำงานบนฝั่ง Client เพื่อเพิ่มความโต้ตอบในหน้าเว็บ และใช้ควบคุมพฤติกรรมของเว็บเพจ เช่น การตอบสนองต่อผู้ใช้</p>
+                <div class="visual-box text-center">⚡ Client-Side Scripting Language</div>
+            </div>
+        </section>
+
+        <section id="page3" class="page-section">
+            <div class="card">
+                <h2>ประวัติความเป็นมาของ JAVASCRIPT</h2>
+                <hr>
+                <p>วิวัฒนาการของภาษา JavaScript ตั้งแต่ปี 1995 จนถึงปัจจุบัน พัฒนาขึ้นครั้งแรกโดย <strong>Brendan Eich ในปี 1995</strong></p>
+                <div class="timeline">
+                    <div class="timeline-item">Mocha</div>
+                    <div class="arrow">➔</div>
+                    <div class="timeline-item">LiveScript</div>
+                    <div class="arrow">➔</div>
+                    <div class="timeline-item highlight">JavaScript</div>
+                </div>
+                <p class="badge-text" style="display:block; text-align:center; margin-top:20px;">กลายเป็นภาษามาตรฐานเว็บในปัจจุบัน</p>
+            </div>
+        </section>
+
+        <section id="page4" class="page-section">
+            <div class="card">
+                <h2>ความสำคัญของ JAVASCRIPT</h2>
+                <hr>
+                <p>เหตุผลสำคัญที่ทำให้ JavaScript เป็นภาษาที่ขาดไม่ได้ในการพัฒนาเว็บสมัยใหม่:</p>
+                <ul class="feature-list">
+                    <li>✨ สร้างหน้าเว็บที่ตอบสนองและโต้ตอบได้ทันที</li>
+                    <li>🔄 อัปเดตข้อมูลได้โดยไม่ต้องโหลดหน้าเว็บใหม่ (AJAX / Fetch API)</li>
+                    <li>🛠️ ทำงานร่วมกับภาษามาตรฐานอย่าง HTML และ CSS ได้อย่างสมบูรณ์แบบ</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="page5" class="page-section">
+            <div class="card">
+                <h2>การทำงานของ JAVASCRIPT</h2>
+                <hr>
+                <ul class="feature-list">
+                    <li>💻 <strong>ทำงานบนฝั่งผู้ใช้ (Client-side):</strong> ประมวลผลบนเครื่องของยูสเซอร์ผู้เปิดเว็บโดยตรง</li>
+                    <li>🌐 <strong>รันบนเว็บเบราว์เซอร์:</strong> รองรับทุกแพลตฟอร์ม เช่น Google Chrome, Mozilla Firefox, และ Safari</li>
+                    <li>🚀 <strong>ข้อดี:</strong> ช่วยเพิ่มความรวดเร็วในการแสดงผล ลดแบนด์วิดท์ และลดภาระการประมวลผลของเซิร์ฟเวอร์</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="page6" class="page-section">
+            <div class="card">
+                <h2>การทำงานร่วมกับ HTML และ CSS</h2>
+                <hr>
+                <p>ทั้ง 3 ภาษาหลักนี้ทำหน้าที่ประสานงานกันเป็นโครงสร้างและชั้นเลเยอร์ที่สมบูรณ์ของเว็บไซต์:</p>
+                <div class="web-trio">
+                    <div class="trio-box html-box"><strong>HTML</strong><br>โครงสร้างและเนื้อหาเว็บ (Structure)</div>
+                    <div class="trio-box css-box"><strong>CSS</strong><br>การตกแต่ง หน้าตา และสีสัน (Presentation)</div>
+                    <div class="trio-box js-box"><strong>JavaScript</strong><br>ฟังก์ชันและระบบควบคุม (Behavior)</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page7" class="page-section">
+            <div class="card">
+                <h2>การประมวลผลผ่าน WEB BROWSER</h2>
+                <hr>
+                <p>เมื่อเราเปิดหน้าเว็บขึ้นมา เบราว์เซอร์จะทำการโหลดไฟล์ทั้งหมดมาที่ฝั่งเครื่องของผู้ใช้ จากนั้น:</p>
+                <ul class="feature-list">
+                    <li>⚙️ โค้ด JavaScript จะถูกแปลงและรันผ่าน <strong>JavaScript Engine</strong> (เช่น V8 Engine ใน Chrome หรือ SpiderMonkey ใน Firefox)</li>
+                    <li>🎯 ทำงานในรูปแบบ <strong>Event-driven</strong> คอยดักจับพฤติกรรมและการโต้ตอบ (Events) เช่น การกดคลิก หรือเลื่อนหน้าจอ</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="page8" class="page-section">
+            <div class="card">
+                <h2>โครงสร้างพื้นฐานของ JAVASCRIPT</h2>
+                <hr>
+                <p>องค์ประกอบที่สําคัญที่ควรรู้จักก่อนเริ่มต้นประยุกต์ใช้งานและเขียนโปรแกรมขั้นสูง:</p>
+                <div class="grid-container">
+                    <div class="grid-item">01. ตัวแปร (Variables)</div>
+                    <div class="grid-item">02. ฟังก์ชัน (Functions)</div>
+                    <div class="grid-item">03. คำสั่งควบคุม (Control Flow)</div>
+                    <div class="grid-item">04. คอมเมนต์ (Comments)</div>
+                    <div class="grid-item">05. ออบเจ็กต์ (Objects)</div>
+                    <div class="grid-item">06. อีเวนต์ (Events)</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page9" class="page-section">
+            <div class="card">
+                <h2>การเชื่อมไฟล์ JAVASCRIPT</h2>
+                <hr>
+                <p>การนำชุดคำสั่งสคริปต์เข้าไปทำงานในหน้าเว็บเพจ สามารถแบ่งวิธีเขียนได้ 2 รูปแบบหลัก:</p>
+                <div class="code-demo-container">
+                    <p><strong>1. เขียนแบบภายนอก (External Script):</strong> แยกไฟล์เขียนต่างหากและเชื่อมโยงผ่านแท็ก</p>
+                    <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+                    <p><strong>2. เขียนแบบภายใน (Internal Script):</strong> ฝังคำสั่งลงในไฟล์ HTML โดยตรง</p>
+                    <pre><code>&lt;script&gt;
+   console.log("Internal JavaScript Works!");
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="page10" class="page-section">
+            <div class="card">
+                <h2>การเขียนคำสั่ง JAVASCRIPT</h2>
+                <hr>
+                <p>ตัวอย่างชุดคำสั่ง (Syntax) และฟังก์ชันพื้นฐานที่ใช้ในการแสดงผลและบันทึกข้อมูล:</p>
+                <div class="interactive-demo">
+                    <pre><code>alert("สวัสดี JavaScript!"); // แสดงกล่องข้อความเตือน
+var name = "Student";     // ประกาศตัวแปรเก็บข้อมูล
+console.log(name);        // บันทึกและพิมพ์ค่าออกคอนโซล</code></pre>
+                    <button class="action-btn" id="demoAlertBtn">ทดลองรันคำสั่ง alert() บนเว็บไซต์</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="page11" class="page-section">
+            <div class="card">
+                <h2>การใช้ COMMENT ใน JAVASCRIPT</h2>
+                <hr>
+                <p>คอมเมนต์ (Comment) คือส่วนของข้อความระบุหมายเหตุในซอร์สโค้ดที่จะไม่ถูกประมวลผลโดยคอมไพเลอร์ มีประโยชน์เพื่อช่วยอธิบายโค้ดให้เข้าใจง่ายขึ้น:</p>
+                <div class="comment-box">
+                    <p><code>// คอมเมนต์แบบบรรทัดเดียว (Single-line Comment)</code></p>
+                    <p style="margin-top: 15px;"><code>/* คอมเมนต์แบบหลายบรรทัด (Multi-line Comment) <br> ใช้เขียนอธิบายเชิงลึก <br> หรือขยายความเพิ่มเติม */</code></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="page12" class="page-section">
+            <div class="card thank-you-card">
+                <h2>บทสรุปเนื้อหา JavaScript</h2>
+                <div class="badge-text large">ขอบคุณค่ะ</div>
+                <hr>
+                <div class="profile-summary">
+                    <h3>กิตติกา พรหมศิริ</h3>
+                    <h3>นันทิตา เที่ยงทัศน์</h3>
+                    <h3>สิริภัสสรณ์ ศูนยัน</h3>
+                    <h3>รัชนีภรณ์ ยันตะพันธ์</h3>
+                    <h3>สุริภา นั่งสูงเนิน</h3>
+                    <p class="prof-sub">สาขาเทคโนโลยีสารสนเทศ</p>
+                    <p class="prof-sub">วิทยาลัยเทคนิคสว่างแดนดิน</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-nav">
+        <button class="nav-btn" id="prevBtn">◀ ย้อนกลับ</button>
+        <div class="page-indicator" id="pageIndicator">หน้า 1 / 12</div>
+        <button class="nav-btn" id="nextBtn">ถัดไป ▶</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
